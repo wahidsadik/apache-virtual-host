@@ -1,0 +1,13 @@
+---
+- debug: msg="website = {{website}}"
+- debug: msg="template = {{template}}"
+
+- name: Copy virtual-host config file for {{website}}
+  template: src={{template}}.j2 dest=/etc/apache2/sites-available/{{website}}.conf
+  become: true
+
+- name: Enable virtual host - {{ website }}
+  command: a2ensite {{ website }}.conf
+  notify:
+    - Restart apache2
+  become: true
