@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/wahidsadik/apache-virtual-host.svg?branch=master)](https://travis-ci.org/wahidsadik/apache-virtual-host)
-[![Galaxy](https://img.shields.io/badge/galaxy-ansible--role--apache-green.svg)](https://galaxy.ansible.com/wahidsadik/apache-virtual-host)
+[![Galaxy](https://img.shields.io/badge/galaxy-apache--virtual--host-green.svg)](https://galaxy.ansible.com/wahidsadik/apache-virtual-host)
 
 Role Name
 =========
