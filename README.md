@@ -34,7 +34,7 @@ Variable name|Default value|Comment
 -------------|-------------|-------
 `add_www` | `false` | When `true`, www will be added as server alias.
 `disable_default_site` | `false` | When `true`, default site code will be removed and virtual host will be deactivated.
-`certbot_tls` | `false` | When `true`, `certbot-auto` will be used to create TLS certificate.
+`certbot_tls` | `false` | When `true`, `certbot-auto` will be used to create TLS certificate. Also see `certbot_tos_email` variable below.
 
 Users must pass the following parameters (i.e. variables):
 
@@ -42,6 +42,7 @@ Users must pass the following parameters (i.e. variables):
 - `template`: Choice of `basic` and `laravel`.
   - `basic` sets document-root to `/var/www/{{website}}`.
   - `laravel` sets document-root to `/var/www/{{website}}/public`.
+- `certbot_tos_email`: When `certbot_tls` is `true`, this should be provided. Email address.
 
 Example values for `domain`:
 
