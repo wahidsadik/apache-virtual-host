@@ -31,7 +31,7 @@
     - Restart apache2
 
 - name: Install letsencrypt/certbot-auto TLS
-  command: certbot-auto --domain {{website}} --redirect --quiet
+  command: certbot-auto --apache --domain {{website}} --redirect --quiet
   become: true
   when: certbot_tls
   notify:
