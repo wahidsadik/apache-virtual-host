@@ -33,6 +33,8 @@ The role defines the following variables in `defaults/main.yml`:
 Variable name|Default value|Comment
 -------------|-------------|-------
 `add_www` | `false` | When `true`, www will be added as server alias.
+`disable_default_site` | `false` | When `true`, default site code will be removed and virtual host will be deactivated.
+`certbot_tls` | `false` | When `true`, `certbot-auto` will be used to create TLS certificate.
 
 Users must pass the following parameters (i.e. variables):
 
