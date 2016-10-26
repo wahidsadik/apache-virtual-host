@@ -1,5 +1,8 @@
 <VirtualHost *:80>
     ServerName {{website}}
+    {% if add_www %}
+    ServerAlias www.{{website}}
+    {% endif %}
 
     ServerAdmin webmaster@localhost
     DocumentRoot /var/www/{{website}}
@@ -17,7 +20,4 @@
 
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-RewriteEngine on
-RewriteCond %{SERVER_NAME} =banglaflix-dev1.bringabouttech.com
-RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,QSA,R=permanent]
 </VirtualHost>

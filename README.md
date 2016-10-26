@@ -28,7 +28,11 @@ The `remote_user` needs to have `sudo` access or be `root` equivalent user.
 Role Variables
 --------------
 
-No default variable defined.
+The role defines the following variables in `defaults/main.yml`:
+
+Variable name|Default value|Comment
+-------------|-------------|-------
+`add_www` | `false` | When `true`, www will be added as server alias.
 
 Users must pass the following parameters (i.e. variables):
 
