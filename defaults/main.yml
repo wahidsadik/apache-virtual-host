@@ -1,4 +1,4 @@
 ---
-add_www: v
+add_www: false
 disable_default_site: false
 certbot_tls: false
