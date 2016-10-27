@@ -39,9 +39,11 @@ Variable name|Default value|Comment
 Users must pass the following parameters (i.e. variables):
 
 - `website`. It is assumed that the website assets will be available at `/var/www/{{website}}` location.
-- `template`: Choice of `basic` and `laravel`.
+- `template`: Choice of `basic`, `laravel` and `relative`.
   - `basic` sets document-root to `/var/www/{{website}}`.
   - `laravel` sets document-root to `/var/www/{{website}}/public`.
+  - `relative` sets document-root to `/var/www/{{website}}/{{relative_path}}`.
+    - Requires additional definition of `relative_path`.
 - `certbot_tos_email`: When `certbot_tls` is `true`, this should be provided. Email address.
 
 Example values for `domain`:

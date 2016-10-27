@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+    ServerName {{website}}
+    {% if add_www %}
+    ServerAlias www.{{website}}
+    {% endif %}
+
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/{{website}}/{{relative_path}}
+
+    <Directory /var/www/{{website}}/{{relative_path}}>
+        # Don't show directory index
+        Options -Indexes +FollowSymLinks +MultiViews
+
+        # Allow .htaccess files
+        AllowOverride All
+
+        # Allow web access to this directory
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
