@@ -51,6 +51,11 @@ Example values for `domain`:
 - example.com
 - abc
 
+Known issues
+------------
+
+- #1 - When `certbot_tls` os `true`, the role generates only one TLS certificate even when `add_www` is `true`. As as result, `https://www.example.com` will get an invalid certificate error.
+
 Dependencies
 ------------
 
