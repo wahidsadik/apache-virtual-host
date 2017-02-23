@@ -11,7 +11,7 @@ The role does these:
 - Creates and activates a virtual host with Apache.
 - Doesn't configure HTTPS. You can use https://letsencrypt.org/ for that.
 
-The role is available on Ansible Galaxy: [https://galaxy.ansible.com/wahidsadik/ansible-apache-role](https://galaxy.ansible.com/wahidsadik/apache-virtual-host).
+The role is available on Ansible Galaxy: [https://galaxy.ansible.com/wahidsadik/apache-virtual-host](https://galaxy.ansible.com/wahidsadik/apache-virtual-host).
 
 To add this role from Ansible Galaxy, run: `ansible-galaxy install wahidsadik.apache-virtual-host`.
 
