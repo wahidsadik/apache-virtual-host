@@ -1,4 +1,4 @@
 ---
 add_www: false
 disable_default_site: false
-certbot_tls: false
+letsencrypt_tls: false

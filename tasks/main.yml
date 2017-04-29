@@ -3,7 +3,7 @@
 - debug: msg="template = {{template}}"
 - debug: msg="add_www = {{add_www}}"
 - debug: msg="disable_default_site = {{disable_default_site}}"
-- debug: msg="certbot_tls = {{certbot_tls}}"
+- debug: msg="letsencrypt_tls = {{letsencrypt_tls}}"
 
 
 - name: Copy virtual-host config file for {{website}}
@@ -30,9 +30,24 @@
   notify:
     - Restart apache2
 
-- name: Install letsencrypt/certbot-auto TLS
-  command: certbot-auto --apache --agree-tos --email {{certbot_tos_email}} --domain {{website}} --redirect --quiet
+- name: Add PPA for letsencrypt
+  action: apt_repository repo=ppa:certbot/certbot
   become: true
-  when: certbot_tls
+  when: letsencrypt_tls
+
+- name: Update APT cache after adding PPA
+  action: apt update_cache=yes
+  become: true
+  when: letsencrypt_tls
+
+- name: Install letsencrypt
+  action: apt pkg=python-certbot-apache state=installed
+  become: true
+  when: letsencrypt_tls
+
+- name: Install letsencrypt TLS
+  command: certbot --apache --agree-tos --email {{certbot_tos_email}} --domain {{website}} --redirect --quiet
+  become: true
+  when: letsencrypt_tls
   notify:
     - Restart apache2

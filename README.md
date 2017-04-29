@@ -34,7 +34,7 @@ Variable name|Default value|Comment
 -------------|-------------|-------
 `add_www` | `false` | When `true`, www will be added as server alias.
 `disable_default_site` | `false` | When `true`, default site code will be removed and virtual host will be deactivated.
-`certbot_tls` | `false` | When `true`, `certbot-auto` will be used to create TLS certificate. Also see `certbot_tos_email` variable below.
+`letsencrypt_tls` | `false` | When `true`, `certbot` will be used to create TLS certificate. Also see `certbot_tos_email` variable below.
 
 Users must pass the following parameters (i.e. variables):
 
@@ -44,7 +44,7 @@ Users must pass the following parameters (i.e. variables):
   - `laravel` sets document-root to `/var/www/{{website}}/public`.
   - `relative` sets document-root to `/var/www/{{website}}/{{relative_path}}`.
     - Requires additional definition of `relative_path`.
-- `certbot_tos_email`: When `certbot_tls` is `true`, this should be provided. Email address.
+- `certbot_tos_email`: When `letsencrypt_tls` is `true`, this should be provided. Email address.
 
 Example values for `domain`:
 
@@ -54,7 +54,7 @@ Example values for `domain`:
 Known issues
 ------------
 
-- #1 - When `certbot_tls` os `true`, the role generates only one TLS certificate even when `add_www` is `true`. As as result, `https://www.example.com` will get an invalid certificate error.
+- #1 - When `letsencrypt_tls` os `true`, the role generates only one TLS certificate even when `add_www` is `true`. As as result, `https://www.example.com` will get an invalid certificate error.
 
 Dependencies
 ------------
